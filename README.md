@@ -1,7 +1,7 @@
 # Projeto_Sistema_de_Avaliacao
 
 ## O que é
-Este projeto consiste no desenvolvimento de uma plataforma web de avaliação e descoberta de filmes, séries e animes, inspirada em plataformas como o IMDb. Desenvolvido como parte de um projeto escolar com duração de dois meses, o trabalho utiliza a metodologia ágil Scrum, com o desenvolvimento organizado em ciclos de trabalho (sprints).
+Este projeto consiste no desenvolvimento de uma plataforma web de avaliação e descoberta de filmes, séries e animes. Desenvolvido como parte de um projeto escolar com duração de dois meses, o trabalho utiliza a metodologia ágil Scrum, com o desenvolvimento organizado em ciclos de trabalho (sprints).
 
 O objetivo é criar uma plataforma na qual os usuários possam explorar um catálogo de mídias, avaliar seus títulos favoritos e compartilhar suas opiniões, contribuindo para a construção de avaliações coletivas que auxiliem outros usuários na escolha do que assistir.
 
