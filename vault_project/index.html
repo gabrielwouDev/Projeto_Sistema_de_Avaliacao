@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault - Catálogo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="imgs/vault.png" alt="Vault Logo" class="logo-img">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Catálogo</a>
+            <a href="minha-lista.html">Minha lista</a>
+            <a href="comunidade.html">Comunidade</a>
+        </nav>
+        <div class="header-actions">
+            <div class="search-box-header">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Buscar uma obra...">
+            </div>
+            <div class="user-avatar"></div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <section class="hero-banner">
+            <div class="hero-top-text">
+                <h1>Sua próxima grande história.</h1>
+                <span class="hero-sub">Filmes, séries e animes. Um universo para explorar.</span>
+            </div>
+            
+            <div class="hero-card-featured">
+                <div class="hero-badge-destaque">⭐ DESTAQUE • ESCOLHA DA SEMANA</div>
+                <div class="hero-content">
+                    <h2>Duna: Parte Dois</h2>
+                    <div class="hero-meta">
+                        <span>2024</span>
+                        <span>•</span>
+                        <span>Filme</span>
+                        <span>•</span>
+                        <span>2h 46min</span>
+                        <span class="hero-rating">★ 4,8</span>
+                    </div>
+                    <p class="hero-sinopse">
+                        Paul Atreides se une a Chani e aos Fremen enquanto busca vingança contra os conspiradores que destruíram sua família. Diante de uma escolha entre o amor de sua vida e o destino do universo...
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="detalhes.html?id=1" class="btn-primary">Explorar obra ↗</a>
+                        <a href="#" class="btn-secondary">Minha lista +</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <div class="catalog-title-area">
+                <h3>Encontre a sua próxima sessão</h3>
+                <span class="catalog-count-info">Explore títulos de todos os gêneros e formatos</span>
+            </div>
+
+            <div class="filter-tabs-main">
+                <button class="tab-pill active">Todas as obras</button>
+                <button class="tab-pill">Filmes</button>
+                <button class="tab-pill">Séries</button>
+                <button class="tab-pill">Animes</button>
+            </div>
+
+            <div class="filter-bar">
+                <div class="search-box-inline">
+                    <span class="search-icon">🔍</span>
+                    <input id="search" type="text" placeholder="Busque por título, direção ou elenco" >
+                </div>
+                <select class="filter-select"><option>Todos os gêneros</option></select>
+                <select class="filter-select"><option>Qualquer ano</option></select>
+                <select class="filter-select"><option>Plataformas e notas</option></select>
+                
+                <div class="filter-sort">
+                    <span>Ordenar por:</span>
+                    <select class="filter-select select-sort"><option>Popularidade</option></select>
+                </div>
+            </div>
+
+            <div class="results-info-bar">
+                <span>Exibindo 12 de 1.249 obras</span>
+            </div>
+
+            <div class="cards-grid" id="container-cards">
+            </div>
+
+            <div class="pagination-container">
+                <span class="page-status">Página 1 de 104</span>
+                <div class="pagination-controls">
+                    <button class="page-btn">&lt;</button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="dots">...</span>
+                    <button class="page-btn">104</button>
+                    <button class="page-btn">&gt;</button>
+                </div>
+                <span class="next-page-text">Próxima página &gt;</span>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="logo-container">
+                <img src="imgs/vault.png" alt="Vault Logo" class="logo-img">
+            </div>
+            <div class="footer-links">
+                <a href="#">Sobre o Vault</a>
+                <a href="#">Privacidade</a>
+                <span class="footer-copy-text">© 2026 Vault</span>
+            </div>
+        </div>
+        <p class="footer-credits">Histórias que ficam depois dos créditos.</p>
+    </footer>
+    <script type="module" src="../src/dao/dadosCard/cards.js"></script>
+</body>
+</html>
