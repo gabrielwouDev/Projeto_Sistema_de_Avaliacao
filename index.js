@@ -17,7 +17,7 @@ app.get('/titulos', async (req,res) =>{
     const dados = await buscarTitulos()
     res.json(dados)
   } catch (erro) {
-      res.status(500).json({ erro: 'Erro ao listar Respostas', detalhes: erro.message })
+      res.status(500).json({ erro: 'Erro ao Buscar Títulos', detalhes: erro.message })
     }
 })
 
