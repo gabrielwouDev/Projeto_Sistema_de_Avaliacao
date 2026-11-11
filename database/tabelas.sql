@@ -18,6 +18,7 @@ CREATE TABLE titulo (
     id_titulo INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(200) NOT NULL,
     sinopse TEXT NOT NULL,
+    imagem_url VARCHAR(500),
     ano_lancamento INT NOT NULL,
     tipo VARCHAR(10) NOT NULL
 );
@@ -47,4 +48,7 @@ CREATE TABLE avaliacao (
     UNIQUE (id_usuario, id_titulo)
 );
 
+select*from genero
+select*from titulo
+show tables
 
