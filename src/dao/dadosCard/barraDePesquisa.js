@@ -1,23 +1,18 @@
+import { setTexto } from "./estadoFiltro.js"
 
-function iniciarBarraPesquisa(input,container) {
+function iniciarBarraPesquisa(input) {
     input.addEventListener('input', (event) => {
-    const texto = formatString(event.target.value)
-
-        container.querySelectorAll('#container-cards .card').forEach(card => {
-            const titulo = formatString(card.querySelector('.card-title').textContent)
-            card.style.display = titulo.includes(texto) ? '' : 'none'
-        })
+        setTexto(formatString(event.target.value))
     })
 }
-
 
 function formatString(value) {
     return value
         .toLowerCase()
-        .trim()
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
-        ;  // ignora acentos
+        .replace(/\s+/g, '')
+        .trim()
 }
 
-export{ iniciarBarraPesquisa , formatString }
+export { iniciarBarraPesquisa, formatString }

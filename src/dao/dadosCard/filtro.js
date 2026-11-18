@@ -1,30 +1,15 @@
-import { formatString } from "./barraDePesquisa.js";
+import { formatString } from "./barraDePesquisa.js"
+import { setTipo } from "./estadoFiltro.js"
 
-function iniciarFiltro(btns,cards){
+function iniciarFiltro(btns) {
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
+            btns.forEach(button => button.classList.remove('active'))
+            btn.classList.add('active')
 
-            // Remove active dos outros botões
-            btns.forEach(button => button.classList.remove('active'));
-
-            // Adiciona active ao botão clicado
-            btn.classList.add('active');
-
-            // Captura o filtro selecionado
-            const filtro = formatString(btn.textContent);
-            
-            // Filtra os cards
-            cards.forEach(card => {
-                const tipo = formatString(
-                    card.querySelector('.tag-type').textContent
-                );
-                
-                card.style.display = filtro === 'todas as obras' || tipo === filtro ? '' : 'none';
-                    
-            });
-        });
-    });
+            setTipo(formatString(btn.textContent))
+        })
+    })
 }
 
-export{ iniciarFiltro } 
-
+export { iniciarFiltro }
