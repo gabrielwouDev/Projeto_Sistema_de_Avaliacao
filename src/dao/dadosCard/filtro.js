@@ -19,7 +19,9 @@ function iniciarFiltro(btns,cards){
                     card.querySelector('.tag-type').textContent
                 );
                 
-                card.style.display = filtro === 'todas as obras' || tipo === filtro ? '' : 'none';
+                const TODAS = formatString('Todas as obras')
+
+                card.style.display = filtro === TODAS || tipo === filtro ? '' : 'none';
                     
             });
         });

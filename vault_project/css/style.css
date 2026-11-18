@@ -588,3 +588,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+#sem-resultados{
+    display:none;
+}
