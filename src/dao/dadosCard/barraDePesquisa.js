@@ -1,30 +1,10 @@
+import { setTexto } from "./estadoFiltro.js"
 
-function iniciarBarraPesquisa(input,container) {
+function iniciarBarraPesquisa(input) {
     input.addEventListener('input', (event) => {
-        const texto = formatString(event.target.value)
-        const semResultados = document.getElementById('sem-resultados')
-
-        let temResultado = false;
-
-        container.querySelectorAll('#container-cards .card').forEach(card => {
-            const titulo = formatString(card.querySelector('.card-title').textContent)
-            if(titulo.includes(texto)){
-                card.style.display = ''
-
-                temResultado = true
-            }else{
-                card.style.display = 'none'
-            }
-        })
-        
-        if(temResultado){
-            semResultados.style.display = 'none'
-        }else{
-            semResultados.style.display = 'block'
-        }
+        setTexto(formatString(event.target.value))
     })
 }
-
 
 function formatString(value) {
     return value
@@ -35,4 +15,4 @@ function formatString(value) {
         .trim()
 }
 
-export{ iniciarBarraPesquisa , formatString }
+export { iniciarBarraPesquisa, formatString }
