@@ -16,7 +16,8 @@ function formatString(value) {
         .toLowerCase()
         .trim()
         .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')   // ignora acentos
+        .replace(/[\u0300-\u036f]/g, '')
+        ;  // ignora acentos
 }
 
 export{ iniciarBarraPesquisa , formatString }

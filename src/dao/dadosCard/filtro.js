@@ -1,4 +1,4 @@
-/*import { formatString } from "./barraDePesquisa";
+import { formatString } from "./barraDePesquisa.js";
 
 function iniciarFiltro(btns,cards){
     btns.forEach(btn => {
@@ -12,7 +12,7 @@ function iniciarFiltro(btns,cards){
 
             // Captura o filtro selecionado
             const filtro = formatString(btn.textContent);
-            console.log('Filtro selecionado:', filtro);
+            
             // Filtra os cards
             cards.forEach(card => {
                 const tipo = formatString(
@@ -27,4 +27,4 @@ function iniciarFiltro(btns,cards){
 }
 
 export{ iniciarFiltro } 
-*/
+

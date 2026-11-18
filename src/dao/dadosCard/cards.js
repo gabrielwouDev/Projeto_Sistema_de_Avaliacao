@@ -1,38 +1,17 @@
 import { buscarDados } from "./buscarDados.js"
 import { gerarCard } from "./gerarElementos.js"
-import { iniciarBarraPesquisa,formatString } from "./barraDePesquisa.js"
+import { iniciarBarraPesquisa } from "./barraDePesquisa.js"
+import { iniciarFiltro } from "./filtro.js"
 
 const titulos = await buscarDados('http://localhost:3000/titulos')
 const container = document.querySelector('#container-cards')
 const searchInput = document.getElementById('search')
 const btns = document.querySelectorAll('.tab-pill');
-const cards = document.querySelectorAll('#container-cards .card');
 
+//A partir daqui os cards são gerados e podem ser manipulados.
 titulos.forEach(item => container.append(gerarCard(item)))
 
+const cards = document.querySelectorAll('#container-cards .card');
 iniciarBarraPesquisa(searchInput,container)
-
-btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-
-        // Remove active dos outros botões
-        btns.forEach(button => button.classList.remove('active'));
-
-        // Adiciona active ao botão clicado
-        btn.classList.add('active');
-
-        // Captura o filtro selecionado
-        const filtro = formatString(btn.textContent);
-        console.log('Filtro selecionado:', filtro);
-        // Filtra os cards
-        cards.forEach(card => {
-            const tipo = formatString(
-                card.querySelector('.tag-type').textContent
-            );
-            
-            card.style.display = filtro === 'todas as obras' || tipo === filtro ? '' : 'none';
-                
-        });
-    });
-});
+iniciarFiltro(btns,cards)
 
