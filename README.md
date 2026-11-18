@@ -24,9 +24,10 @@ O projeto busca aplicar, na prática, conceitos de desenvolvimento web, organiza
 - NodeJS.
 
 ## Como executar
-- git clone <url>
-- npm i
-- npm run start
+- Na aba 'Code' do repositório pressione o botão 'Code' e copie a URL que aparecer.
+- No seu VSCode abra um novo terminal e digite 'git clone <insira aqui a URL copiada no passo anterior>'
+- digite no terminal 'npm i' para instalar as dependências
+- digite 'npm run start' para iniciar o servidor 
 
 ## Status
 Em desenvolvimento.
