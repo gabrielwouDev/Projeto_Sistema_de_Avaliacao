@@ -25,7 +25,7 @@ O projeto busca aplicar, na prática, conceitos de desenvolvimento web, organiza
 
 ## Como executar
 - Na aba 'Code' do repositório pressione o botão 'Code' e copie a URL que aparecer.
-- No seu VSCode abra um novo terminal e digite 'git clone <insira aqui a URL copiada no passo anterior>'
+- No seu VSCode abra um novo terminal e digite "git clone 'insira aqui a URL copiada no passo anterior'"
 - digite no terminal 'npm i' para instalar as dependências
 - digite 'npm run start' para iniciar o servidor 
 
