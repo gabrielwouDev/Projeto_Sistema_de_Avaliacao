@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault — Cadastro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+
+    <div class="auth-layout">
+        
+        <!-- banner -->
+        <aside class="auth-banner">
+            <div class="banner-overlay"></div>
+            
+            <div class="banner-content">
+                <div class="banner-hero-text">
+                    <span class="banner-kicker">FILMES <span class="slash">/</span> SÉRIES <span class="slash">/</span> ANIMES</span>
+                    <h1>Toda grande história começa com você.</h1>
+                    <p>Guarde suas descobertas, avalie o que marcou e encontre o que vem a seguir.</p>
+                </div>
+
+                <div class="banner-featured-info">
+                    <div class="accent-line"></div>
+                    <span class="featured-tag">EM CENA</span>
+                    <h2>Attack On Titan</h2>
+                    <p class="featured-meta">2013 • Anime • Hajime Isayama</p>
+                </div>
+
+                <footer class="banner-footer">
+                    <span>Histórias que ficam depois dos créditos.</span>
+                </footer>
+            </div>
+        </aside>
+
+        <!-- formulario -->
+        <main class="auth-form-section">
+            
+            <header class="auth-top-nav">
+                <a href="index.html" class="back-link">← Voltar ao catálogo</a>
+                <span class="login-prompt">Já tem uma conta? <a href="login.html">Entrar</a></span>
+            </header>
+
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <span class="form-kicker">FAÇA PARTE DO VAULT</span>
+                    <h2>Crie sua conta.</h2>
+                    <p>Um lugar para todas as suas histórias favoritas.</p>
+                </div>
+
+                <form id="cadastro-form" class="cadastro-form" novalidate>
+                    <div class="input-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Como você quer ser chamado?" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="senha">Senha</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="senha" name="senha" placeholder="Crie uma senha" minlength="8" required>
+                            <button type="button" class="toggle-password" data-target="senha">Mostrar</button>
+                        </div>
+                        <span class="input-hint">Use pelo menos 8 caracteres.</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirmar-senha">Confirmar senha</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Digite a senha novamente" minlength="8" required>
+                            <button type="button" class="toggle-password" data-target="confirmar-senha">Mostrar</button>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        <label for="termos">
+                            Li e aceito os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a>.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Criar minha conta</button>
+
+                    <p class="form-bottom-login">
+                        Já tem uma conta? <a href="login.html">Entre aqui</a>
+                    </p>
+                </form>
+            </div>
+            
+            <footer class="auth-bottom-footer">
+                <span>© 2026 Vault</span>
+                <span>•</span>
+                <a href="#">Privacidade</a>
+                <span>•</span>
+                <a href="#">Termos de uso</a>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="js/cadastro.js"></script>
+</body>
+</html>
