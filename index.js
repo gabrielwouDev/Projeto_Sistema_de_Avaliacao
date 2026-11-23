@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt'
 
 import { buscarTitulos } from './src/dao/dadosCard/buscarTitulos.js';
 import { cadastrarUsuario } from './src/dao/usuario/cadastrarUsuario.js'
+import { buscarUsuarioPorEmail } from './src/dao/usuario/buscarUsuarioPorEmail.js'
 
 const app = express()
 
@@ -35,7 +36,7 @@ app.post('/cadastro', async (req, res) => {
     }
     
     if (senha.length < 8 || Buffer.byteLength(senha, 'utf8') > 72) {
-      return res.status(400).json({ erro: 'A senha deve ter entre 8 caracteres e 72 bytes' })
+      return res.status(400).json({ erro: 'A senha deve ter no mínimo 8 caracteres' })
     }
 
     const senhaHash = await bcrypt.hash(senha, 12)
@@ -50,6 +51,23 @@ app.post('/cadastro', async (req, res) => {
   }
 })
 
+
+app.post('/login', async (req, res) => {
+  try {
+    const { email, senha } = req.body
+
+    const usuario = await buscarUsuarioPorEmail(email)
+    const ok = usuario && await bcrypt.compare(senha, usuario.senha_hash)
+
+    if (!ok) {
+      return res.status(401).json({ erro: 'E-mail ou senha incorretos' })
+    }
+
+    res.json({ id: usuario.id_usuario, nome: usuario.nome })
+  } catch (erro) {
+    res.status(500).json({ erro: 'Erro no login' })
+  }
+})
 
 
 app.listen(3000, () => {

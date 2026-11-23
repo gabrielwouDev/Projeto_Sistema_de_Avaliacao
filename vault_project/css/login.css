@@ -235,7 +235,7 @@ body {
     font-weight: 500;
     color: #ccc;
 }
-
+.input-group input[type="text"],
 .input-group input[type="email"],
 .input-group input[type="password"] {
     width: 100%;
