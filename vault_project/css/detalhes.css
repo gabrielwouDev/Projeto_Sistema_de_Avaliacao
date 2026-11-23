@@ -1,0 +1,994 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 70px;
+    border-bottom: 1px solid #1f1f1f;
+    background-color: #121212;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-img {
+    height: 32px;
+    object-fit: contain;
+    margin-bottom: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    height: 100%;
+}
+
+.nav-links a {
+    color: #777;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #93032E;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #FFF;
+    font-weight: 600;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-box-header {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 220px;
+}
+
+.search-box-header input {
+    background: transparent;
+    border: none;
+    color: #FFF;
+    outline: none;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.search-icon {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: #222;
+    border-radius: 50%;
+    border: 1px solid #383838;
+    color: #ccc;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+}
+
+.user-avatar:hover {
+    border-color: #93032E;
+    color: #FFF;
+}
+
+/* =========================================
+   CONTAINER PRINCIPAL & BREADCRUMB
+   ========================================= */
+.main-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 24px 20px 60px 20px;
+    flex: 1;
+    width: 100%;
+}
+
+.breadcrumb-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: #666;
+    margin-bottom: 18px;
+}
+
+.breadcrumb-trail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb-trail a {
+    color: #777;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb-trail a:hover {
+    color: #FFF;
+}
+
+.breadcrumb-trail strong {
+    color: #ccc;
+    font-weight: 500;
+}
+
+.back-catalog-link {
+    color: #777;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-catalog-link:hover {
+    color: #FFF;
+}
+
+/* =========================================
+   HERO BANNER DA OBRA
+   ========================================= */
+.work-hero {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #261318;
+    padding: 36px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+}
+
+.work-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&auto=format&fit=crop&q=85');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.work-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(15, 13, 13, 0.96) 0%,
+        rgba(18, 15, 15, 0.86) 52%,
+        rgba(18, 15, 15, 0.45) 100%
+    );
+    z-index: 2;
+}
+
+.work-hero-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.work-poster {
+    width: 195px;
+    height: 285px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
+}
+
+.work-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-category-line {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #c24b6b;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.work-header-info h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.85rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #FFF;
+    margin-bottom: 6px;
+}
+
+.work-original-title {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 14px;
+}
+
+.work-specs {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.82rem;
+    color: #aaa;
+    margin-bottom: 18px;
+}
+
+.age-badge {
+    border: 1px solid #444;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ccc;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.work-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.rating-big-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFF;
+    line-height: 1;
+}
+
+.rating-stars-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stars-display {
+    display: flex;
+    gap: 2px;
+    font-size: 0.95rem;
+}
+
+.star {
+    color: #333;
+}
+
+.star.filled {
+    color: #93032E;
+}
+
+.star.half {
+    background: linear-gradient(90deg, #93032E 50%, #333 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating-total-count {
+    font-size: 0.72rem;
+    color: #777;
+}
+
+.work-action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-primary {
+    background-color: #93032E;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #b30438;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #FFF;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+.btn-secondary.added {
+    border-color: #93032E;
+    background-color: rgba(147, 3, 46, 0.2);
+}
+
+.btn-icon-share {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ccc;
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.btn-icon-share:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #FFF;
+}
+
+/* =========================================
+   SINOPSE & FICHA TÉCNICA
+   ========================================= */
+.work-synopsis-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+}
+
+.synopsis-col h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #FFF;
+    margin-bottom: 14px;
+}
+
+.synopsis-col p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #a3a3a3;
+    margin-bottom: 20px;
+}
+
+.genre-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.genre-pill {
+    background: #181818;
+    border: 1px solid #282828;
+    color: #888;
+    font-size: 0.74rem;
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.credits-col {
+    border-left: 1px solid #1f1f1f;
+    padding-left: 36px;
+}
+
+.credits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+}
+
+.credit-full {
+    grid-column: 1 / -1;
+}
+
+.credit-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.credit-value {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #1f1f1f;
+    margin-bottom: 40px;
+}
+
+/* =========================================
+   AVALIAÇÕES & FORMULÁRIO LATERAL
+   ========================================= */
+.reviews-layout {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.reviews-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.reviews-section-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.reviews-count-label {
+    font-size: 0.78rem;
+    color: #666;
+}
+
+/* Card de Resumo de Notas */
+.rating-breakdown-card {
+    background: #171717;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin-bottom: 24px;
+}
+
+.breakdown-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 95px;
+}
+
+.big-score {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stars-row {
+    display: flex;
+    gap: 2px;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.out-of-text {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.breakdown-bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.72rem;
+    color: #777;
+}
+
+.bar-label {
+    width: 24px;
+}
+
+.bar-track {
+    flex: 1;
+    height: 4px;
+    background: #252525;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: #93032E;
+    border-radius: 4px;
+}
+
+.bar-percent {
+    width: 30px;
+    text-align: right;
+}
+
+/* Filtro de Avaliações */
+.reviews-filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.reviews-sort-select {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 0.78rem;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Lista de Reviews */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.review-card {
+    background: #161616;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.review-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reviewer-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #232323;
+    border: 1px solid #333;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviewer-name {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #eee;
+}
+
+.review-date {
+    display: block;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.review-stars {
+    display: flex;
+    gap: 2px;
+    font-size: 0.85rem;
+}
+
+.review-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #FFF;
+    margin-bottom: 6px;
+}
+
+.review-text {
+    font-size: 0.83rem;
+    line-height: 1.6;
+    color: #999;
+    margin-bottom: 14px;
+}
+
+.review-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.74rem;
+    color: #666;
+}
+
+.review-action-btn {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 0.74rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.review-action-btn:hover {
+    color: #FFF;
+}
+
+.btn-see-all-reviews {
+    width: 100%;
+    background: #171717;
+    border: 1px solid #262626;
+    color: #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-see-all-reviews:hover {
+    border-color: #93032E;
+    color: #FFF;
+}
+
+/* =========================================
+   FORMULÁRIO LATERAL ("Como foi a sua sessão?")
+   ========================================= */
+.review-form-card {
+    background: #171717;
+    border: 1px solid #252525;
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.form-kicker {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #93032E;
+    margin-bottom: 6px;
+}
+
+.review-form-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #777;
+    margin-bottom: 22px;
+}
+
+.rating-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.selected-rating-label {
+    color: #c24b6b;
+    font-weight: 600;
+}
+
+.interactive-stars {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    font-size: 1.7rem;
+    margin-bottom: 14px;
+}
+
+.rating-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.rating-pill {
+    background: #1e1e1e;
+    border: 1px solid #2c2c2c;
+    color: #888;
+    font-size: 0.7rem;
+    padding: 6px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.rating-pill:hover {
+    border-color: #555;
+    color: #FFF;
+}
+
+.rating-pill.active {
+    background: #93032E;
+    border-color: #93032E;
+    color: #FFF;
+    font-weight: 600;
+}
+
+.rating-scale-hint {
+    display: block;
+    font-size: 0.7rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.optional-tag {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    background: #121212;
+    border: 1px solid #282828;
+    border-radius: 6px;
+    padding: 11px 12px;
+    color: #FFF;
+    font-size: 0.82rem;
+    outline: none;
+    resize: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: #93032E;
+}
+
+.textarea-wrapper {
+    position: relative;
+}
+
+.textarea-wrapper textarea {
+    padding-bottom: 24px;
+    line-height: 1.5;
+}
+
+.char-counter {
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    font-size: 0.68rem;
+    color: #555;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #121212;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background: #93032E;
+    border-color: #93032E;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    color: #FFF;
+    font-size: 0.65rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-group label {
+    font-size: 0.76rem;
+    color: #888;
+    cursor: pointer;
+}
+
+.btn-publish-review {
+    width: 100%;
+    background: #93032E;
+    color: #FFF;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-publish-review:hover {
+    background: #b30438;
+}
+
+.publish-disclaimer {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    border-top: 1px solid #1f1f1f;
+    padding: 30px 40px;
+    background-color: #101010;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1160px;
+    margin: 0 auto 10px auto;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.footer-links a:hover {
+    color: #FFF;
+}
+
+.footer-copy-text {
+    color: #444;
+    font-size: 0.8rem;
+}
+
+.footer-credits {
+    text-align: center;
+    color: #444;
+    font-size: 0.75rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 960px) {
+    .work-hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .work-synopsis-grid,
+    .reviews-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .credits-col {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #1f1f1f;
+        padding-top: 24px;
+    }
+}
