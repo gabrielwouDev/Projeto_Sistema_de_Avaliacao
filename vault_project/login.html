@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vault — Entrar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="auth-layout">
+        
+        <!-- banner -->
+        <aside class="auth-banner">
+            <div class="banner-overlay"></div>
+            
+            <div class="banner-content">
+                <div class="banner-logo-top">
+                    <a href="index.html">
+                        <img src="imgs/vault.png" alt="Vault Logo" class="banner-logo-img">
+                    </a>
+                </div>
+
+                <div class="banner-middle-group">
+                    <div class="banner-hero-text">
+                        <span class="banner-kicker">FILMES <span class="slash">/</span> SÉRIES <span class="slash">/</span> ANIMES</span>
+                        <h1>Sua próxima sessão começa aqui.</h1>
+                        <p>Suas listas, suas avaliações e todas as histórias que ainda esperam por você.</p>
+                    </div>
+
+                    <div class="banner-featured-info">
+                        <div class="accent-line"></div>
+                        <span class="featured-tag">EM CENA</span>
+                        <h2>Duna: Parte Dois</h2>
+                        <p class="featured-meta">2024 • Ficção científica • Denis Villeneuve</p>
+                    </div>
+                </div>
+
+                <footer class="banner-footer">
+                    <span>Histórias que ficam depois dos créditos.</span>
+                </footer>
+            </div>
+        </aside>
+
+        <!-- formulário ai -->
+
+        <main class="auth-form-section">
+            
+            <!-- Navegação Superior -->
+            <header class="auth-top-nav">
+                <a href="index.html" class="back-link">← Voltar ao catálogo</a>
+                <span class="register-prompt">Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></span>
+            </header>
+
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <span class="form-kicker">BEM-VINDO DE VOLTA</span>
+                    <h2>Entre na sua conta.</h2>
+                    <p>Continue de onde a sua última história parou.</p>
+                </div>
+
+                <form id="login-form" class="login-form" novalidate>
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="senha">Senha</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                            <button type="button" class="toggle-password" data-target="senha">Mostrar</button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="lembrar" name="lembrar">
+                            <label for="lembrar">Lembrar de mim</label>
+                        </div>
+                        <a href="#" class="forgot-link">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Entrar</button>
+
+                    <p class="form-bottom-register">
+                        Novo por aqui? <a href="cadastro.html">Crie sua conta</a>
+                    </p>
+                </form>
+            </div>
+
+            <footer class="auth-bottom-footer">
+                <span>© 2026 Vault</span>
+                <span>•</span>
+                <a href="#">Privacidade</a>
+                <span>•</span>
+                <a href="#">Termos de uso</a>
+            </footer>
+
+        </main>
+
+    </div>
+    
+</body>
+</html>
