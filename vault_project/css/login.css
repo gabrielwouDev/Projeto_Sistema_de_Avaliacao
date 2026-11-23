@@ -254,7 +254,7 @@ body {
 }
 
 .input-group input:focus {
-    border-color: #93032E;
+    border-color: #93032e;
     box-shadow: 0 0 0 3px rgba(147, 3, 46, 0.15);
 }
 
