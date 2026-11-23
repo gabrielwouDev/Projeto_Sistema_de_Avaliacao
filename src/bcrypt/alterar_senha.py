@@ -7,9 +7,9 @@ cursor = None
 
 try:
     conexao = mysql.connector.connect(
-        host="localhost",
+        host="127.0.0.1",
         user="root",
-        password=getpass("Senha do MySQL: "),
+        password=getpass("1234"),
         database="catalogo"
     )
 
