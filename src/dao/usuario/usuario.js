@@ -11,7 +11,18 @@ if (usuario) {
     nome.className = 'user-label';
     nome.textContent = usuario.nome;
 
-    area.append(icone, nome);
+    const botaoSair = document.createElement('button');
+    botaoSair.className = 'btn-logout';
+    botaoSair.textContent = 'Sair';
+    botaoSair.addEventListener('click', () => {
+        localStorage.removeItem('usuario');
+        window.location.reload();
+    });
+
+    area.append(icone, nome, botaoSair);
+
+
+    
 } else {
     // deslogado: imagem de login + texto "log-in", levando para a tela de login
     const link = document.createElement('a');
