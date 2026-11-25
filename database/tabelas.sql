@@ -43,12 +43,10 @@ CREATE TABLE avaliacao (
     data_avaliacao DATE NOT NULL,
     id_titulo INT NOT NULL,
     id_usuario INT NOT NULL,
-    FOREIGN KEY (id_titulo) REFERENCES titulo(id_titulo),
-    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
-    UNIQUE (id_usuario, id_titulo)
+    CONSTRAINT fk_avaliacao_titulo  FOREIGN KEY (id_titulo)  REFERENCES titulo(id_titulo),
+    CONSTRAINT fk_avaliacao_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    CONSTRAINT uq_avaliacao_usuario_titulo UNIQUE (id_usuario, id_titulo),
+    CONSTRAINT chk_avaliacao_nota CHECK (nota BETWEEN 0.5 AND 5 AND nota * 2 = FLOOR(nota * 2))
 );
 
-select*from genero
-select*from titulo
-show tables
-
+SHOW TABLES;
