@@ -75,13 +75,39 @@
                     <span class="search-icon">🔍</span>
                     <input id="search" type="text" placeholder="Busque por título, direção ou elenco" >
                 </div>
-                <select class="filter-select"><option>Todos os gêneros</option></select>
-                <select class="filter-select"><option>Qualquer ano</option></select>
+                <select class="filter-select" id="filtro-genero">
+                    <option value="0">Todos os gêneros</option>
+                    <option value="1">Fantasia</option>
+                    <option value="2">Drama</option>
+                    <option value="3">Ficção científica</option>
+                    <option value="4">Ação</option>
+                    <option value="5">Mistério</option>
+                    <option value="6">Animação</option>
+                    <option value="7">Suspense</option>
+                    <option value="8">Comédia</option>
+                    <option value="9">Romance</option>
+                    <option value="10">Aventura</option>
+                </select>
+                <select class="filter-select " id="filtro-ano">
+                    <option value="0">Qualquer ano</option>
+                    <option value="1994">1994</option>
+                    <option value="1997">1997</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2008">2008</option>
+                    <option value="2014">2014</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                </select>
                 <select class="filter-select"><option>Plataformas e notas</option></select>
                 
                 <div class="filter-sort">
                     <span>Ordenar por:</span>
-                    <select class="filter-select select-sort"><option>Popularidade</option></select>
+                    <select class="filter-select select-sort">
+                        <option>maior Popularidade</option>
+                        <option>menor Popularidade</option>
+                    </select>
+                        
                 </div>
             </div>
 

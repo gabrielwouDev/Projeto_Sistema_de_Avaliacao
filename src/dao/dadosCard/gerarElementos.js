@@ -8,6 +8,13 @@ function gerarHtml(tag, classe, texto) {
 function gerarCard(dados) {
     const card = gerarHtml('div', 'card')
 
+    // dados usados pelos filtros e pela ordenação (ver estadoFiltro.js)
+    card.dataset.tipo = String(dados.tipo || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+    card.dataset.ano = dados.ano_lancamento
+    card.dataset.generos = dados.id_generos || ''
+    card.dataset.avaliacoes = dados.total_avaliacoes ?? 0
+    card.dataset.nota = dados.nota_media ?? 0
+
     // --- Imagem + tag + overlay ---
     const wrapper = gerarHtml('div', 'card-image-wrapper')
 
@@ -19,7 +26,7 @@ function gerarCard(dados) {
 
     const overlay = gerarHtml('div', 'card-hover-overlay')
     const link = gerarHtml('a', 'btn-details', 'Ver detalhes ')
-    link.href = `detalhes.html?id=${encodeURIComponent(dados.id_titulo)}`
+    link.href = `detalhes.html?id=${dados.id_titulo}`
     link.append(gerarHtml('span', 'arrow', '↗'))
     overlay.append(link)
 

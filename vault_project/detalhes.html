@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault — pupue</title>
+    <title>Vault — Detalhes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
                 <span class="search-icon">🔍</span>
                 <input type="text" placeholder="Buscar uma obra...">
             </div>
-            <a href="login.html" class="user-avatar" title="Perfil">LC</a>
+            <div class="user-name"></div>
         </div>
     </header>
 
@@ -40,7 +40,7 @@
             <div class="breadcrumb-trail">
                 <a href="index.html">Catálogo</a>
                 <span>›</span>
-                <a href="index.html">Filmes</a>
+                <a href="index.html" id="breadcrumb-categoria">Filmes</a>
                 <span>›</span>
                 <strong id="breadcrumb-titulo">Duna: Parte Dois</strong>
             </div>
@@ -298,7 +298,7 @@
                         <!-- nome de exibicao -->
                         <div class="form-group">
                             <label for="display-name">Nome de exibição</label>
-                            <input type="text" id="display-name" value="Nome aqui!">
+                            <input type="text" id="display-name" value="" readonly>
                         </div>
 
                         <!-- caixa de comentário -->
@@ -308,8 +308,8 @@
                                 <span class="optional-tag">Opcional</span>
                             </div>
                             <div class="textarea-wrapper">
-                                <textarea id="review-comment" rows="4" maxlength="1000" placeholder="Escreva o que achou da obra...">Uma experiência visual impressionante. A escala de Arrakis e a trilha sonora tornam cada cena inesquecível.</textarea>
-                                <span class="char-counter" id="char-counter">112 / 1.000</span>
+                                <textarea id="review-comment" rows="4" maxlength="1000" placeholder="Escreva o que achou da obra..."></textarea>
+                                <span class="char-counter" id="char-counter">0 / 1.000</span>
                             </div>
                         </div>
 
@@ -343,5 +343,7 @@
     </footer>
 
     <script src="js/detalhes.js"></script>
+    <script type="module" src="../src/dao/usuario/usuario.js"></script>
+    <script type="module" src="../src/dao/detalhes/gerarDetalhes.js"></script>
 </body>
 </html>
