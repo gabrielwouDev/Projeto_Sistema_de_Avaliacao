@@ -82,6 +82,39 @@ body {
     transform: scaleX(1);
 }
 
+
+.user-name,
+.login-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.user-icon,
+.login-img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-logout {
+    background: none;
+    border: 1px solid #b50438;
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: inherit;
+    font-size: 0.85rem;
+}
+
+.btn-logout:hover {
+    background-color: #b50438;
+}
+
 .header-actions {
     display: flex;
     align-items: center;

@@ -9,6 +9,8 @@ async function buscarTitulos() {
             t.tipo,
             t.imagem_url,
             GROUP_CONCAT(DISTINCT g.nome ORDER BY g.nome SEPARATOR ', ') AS generos,
+            GROUP_CONCAT(DISTINCT g.id_genero ORDER BY g.id_genero) AS id_generos,
+            COUNT(DISTINCT a.id_avaliacao) AS total_avaliacoes,
             ROUND(AVG(a.nota), 1) AS nota_media
         FROM titulo t
         LEFT JOIN titulo_genero tg ON tg.id_titulo = t.id_titulo
